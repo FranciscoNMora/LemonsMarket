@@ -6,6 +6,7 @@ Small scale API to support an image sharing application.
 
 API requirements:
   /orders/ endpoint, primarily requestable through Post request, using those fields (snake_case or CamelCase open to you):
+
     i. isin (String, 12 chars (this identifies a stock))
     ii. limit_price (Float, always >0)
     iii. side (Enum: buy | sell, case sensitive tolerant)
@@ -37,6 +38,7 @@ docker-compose up -d --build
 
 ## API Documentation
 The documentation of the API is available in the following URLs. The API can be tested here:
+
 -http://127.0.0.1:8000/doc/swagger/ : SwaggerUI documentation
 
 To create orders using the API, it is necessary for the DB to have some Stocks stored (the order is associated to a Stock).
