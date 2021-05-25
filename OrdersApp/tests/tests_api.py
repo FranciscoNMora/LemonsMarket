@@ -3,7 +3,7 @@ from typing import Dict, Any
 
 from django.urls import reverse
 
-from OrdersApp.models import Order
+from OrdersApp.models import Order, Stock
 from OrdersApp.tests.base_test import BaseTest
 
 from rest_framework.test import APIClient
@@ -23,6 +23,13 @@ class StockAPITests(BaseTest):
         self.assertEqual(len(resp.data), 10)
         for user in resp.data:
             self._test_keys(user, ['isin', 'name'])
+
+    def test_create_stock(self):
+        url = reverse('stocks-api-v1')
+        data = {'isin': 'ES0113307021', 'name': 'Bankia'}
+        resp = self.unauth_client.post(url, data, format='json')
+        self.assertEqual(resp.status_code, 201)
+        self.assertTrue(Stock.objects.filter(isin=data['isin']).exists())
 
 
 class OrdersAPITests(BaseTest):

@@ -11,7 +11,6 @@ from OrdersApp.utils import utc_now
 
 
 class OrdersAPI(generics.GenericAPIView):
-    parser_classes = (FormParser, MultiPartParser, JSONParser)
     permission_classes = (permissions.AllowAny,)
     serializer_class = OrderSerializer
 
@@ -33,10 +32,16 @@ class OrdersAPI(generics.GenericAPIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class StockListAPI(ListAPIView):
+class StockListAPI(ListAPIView, mixins.CreateModelMixin):
     """
     It shows the list of available Stocks
     """
     permission_classes = (permissions.AllowAny,)
     queryset = Stock.objects.all()
     serializer_class = StockSerializer
+
+    def post(self, request, *args, **kwargs):
+        """
+        Creates new stock
+        """
+        return self.create(request, *args, **kwargs)
