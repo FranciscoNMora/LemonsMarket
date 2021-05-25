@@ -31,7 +31,7 @@ docker-compose up -d --build
 ```
 
 ## Admin
-The user can access to the admin site (http://127.0.0.1:8000/doc/admin/) using the superuser credentials indicated in the .env.sample file (user/password by default)
+The user can access to the admin site (http://127.0.0.1:8000/admin/) using the superuser credentials indicated in the .env.sample file (user/password by default)
 
 
 
