@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/usr/src/app/
     env_file:
-      - ./.env
+      - ./.env.sample
     depends_on:
       - db
   db:

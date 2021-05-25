@@ -25,15 +25,14 @@ Move to folder
 cd LemonsMarket
 ```
 
-Create .env file from sample. You can modify the env variables if you want.
-```bash
-cp .env.sample .env
-```
-
 Built and deploy containers (assume that docker-compose is installed):
 ```bash
 docker-compose up -d --build
 ```
+
+## Admin
+The user can access to the admin site (http://127.0.0.1:8000/doc/admin/) using the superuser credentials indicated in the .env.sample file (user/password by default)
+
 
 
 ## API Documentation
