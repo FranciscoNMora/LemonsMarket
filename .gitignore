@@ -1,0 +1,51 @@
+*.mo
+*.err
+*.log
+*.pot
+*.pyc
+.env
+.DS_Store
+
+# Git
+.gitattributes
+
+# VSCode
+.vs/
+.vscode/
+
+# pycharm
+.idea
+
+# Vagrant
+.vagrant
+
+# virtualenvs
+venv*/
+
+# kundenportal
+.Python
+bin/
+share/
+include/
+media_root/*
+upload_root/*
+static_root/*
+local_settings.py
+
+# mypy
+mypy.ini
+.mypy_cache/*
+
+# node.js
+node_modules/*
+
+# Celery
+celerybeat-schedule*
+celerybeat.pid
+
+# iceapi
+documentation/
+
+# web components
+rollup.config.js
+src/customer_interface/components/**/readme.md

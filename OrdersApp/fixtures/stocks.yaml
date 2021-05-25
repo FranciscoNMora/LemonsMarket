@@ -1,0 +1,40 @@
+- model: OrdersApp.stock
+  pk: AU0000XVGZA3
+  fields:
+    name: TREASURY CORP VICTORIA
+- model: OrdersApp.stock
+  pk: DE0007664039
+  fields:
+    name: Volkswagen
+- model: OrdersApp.stock
+  pk: ES0178430E18
+  fields:
+    name: TELEFONICA, S.A.
+- model: OrdersApp.stock
+  pk: GB0002634946
+  fields:
+    name: BAE Systems
+- model: OrdersApp.stock
+  pk: JP3633400001
+  fields:
+    name: Toyota Motor
+- model: OrdersApp.stock
+  pk: NL0011821202
+  fields:
+    name: ING Group
+- model: OrdersApp.stock
+  pk: US01609W1027
+  fields:
+    name: Alibaba
+- model: OrdersApp.stock
+  pk: US0378331005
+  fields:
+    name: Apple, Inc.
+- model: OrdersApp.stock
+  pk: US09075V1026
+  fields:
+    name: BioNTech
+- model: OrdersApp.stock
+  pk: US88160R1014
+  fields:
+    name: Tesla
