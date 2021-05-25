@@ -37,6 +37,8 @@ class OrderSerializer(serializers.Serializer):
 
 
 class StockSerializer(serializers.ModelSerializer):
+    isin = serializers.CharField(min_length=12, max_length=12)
+
     class Meta:
         model = Stock
         fields = ('isin', 'name')
