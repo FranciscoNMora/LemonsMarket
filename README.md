@@ -14,9 +14,19 @@ API requirements:
 
 ## User Manual
 
-Clone repository
+Clone repository (assumes that docker-compose is installed)
 ```bash
 git clone https://github.com/FranciscoNMora/LemonsMarket.git
+```
+
+Move to folder
+```bash
+cd LemonsMarket
+```
+
+Create .env file from sample. You can modify the env variables if you want.
+```bash
+cp .env.sample .env
 ```
 
 Built and deploy containers (assume that docker-compose is installed):
