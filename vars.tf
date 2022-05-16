@@ -1,11 +1,7 @@
-# Defining Public Key
-variable "public_key" {
-  default = "tests.pub"
-}
 
 # Defining Private Key
-variable "private_key" {
-  default = "tests.pem"
+variable "AWS_EC2_PEM" {
+  type = string
 }
 
 # Definign Key Name for connection
