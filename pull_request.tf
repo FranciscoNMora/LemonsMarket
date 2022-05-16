@@ -173,10 +173,12 @@ resource "aws_instance" "demoinstance" {
       "sudo chkconfig docker on",
       "sudo yum install -y git",
       "sudo chmod 666 /var/run/docker.sock",
-      "sudo curl -L 'https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)' -o /usr/local/bin/docker-compose",
+      "sudo curl -L https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose",
       "sudo chmod +x /usr/local/bin/docker-compose",
       "git clone https://github.com/FranciscoNMora/LemonsMarket.git",
-      "docker-compose -f docker-compose-deploy.yml up -d"
+      "echo ${var.HASH}",
+      "cd LemonsMarket",
+      "docker-compose up -d"
   ]
  }
 }
