@@ -36,3 +36,4 @@ variable "master_count" {
 variable "HASH" {
   type = string
 }
+
