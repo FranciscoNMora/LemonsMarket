@@ -180,6 +180,6 @@ resource "aws_instance" "demoinstance" {
 }
 
   output "server_id1" {
-    value = "${aws_instance.demoinstance.public_ip}"
+    value = "${aws_instance.demoinstance[0].public_ip}"
   }
 
