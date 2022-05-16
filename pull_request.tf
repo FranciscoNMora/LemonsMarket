@@ -133,7 +133,7 @@ resource "aws_instance" "demoinstance" {
 
   # Attaching Tag to Instance
   tags = {
-    Name = "Search-Head-${count.index + 1}"
+    Name = "${var.GITHUB_REF}"
   }
 
   # Root Block Storage
