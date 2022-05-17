@@ -37,7 +37,7 @@ variable "HASH" {
   type = string
 }
 
-#variable "BRANCH_NAME" {
-#  type = string
-#}
+variable "PR" {
+  type = string
+}
 
