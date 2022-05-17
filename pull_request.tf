@@ -25,7 +25,7 @@ resource "aws_instance" "demoinstance" {
 
   # Attaching Tag to Instance
   tags = {
-    Name = "Example"
+    Name = "${var.PR}"
   }
 
   # Root Block Storage
@@ -68,10 +68,8 @@ resource "aws_instance" "demoinstance" {
       "sudo curl -L https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose",
       "sudo chmod +x /usr/local/bin/docker-compose",
       "git clone https://github.com/FranciscoNMora/LemonsMarket.git",
-      "echo HASH -----------------------------------------------------------",
-      "echo ${var.HASH}",
-      "echo -----------------------------------------------------------HASH ",
       "cd LemonsMarket",
+      "git checkout ${var.HASH}",
       "docker-compose up -d"
   ]
  }
