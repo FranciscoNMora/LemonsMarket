@@ -29,7 +29,7 @@ jobs:
 
       # This will echo "Your PR is 7", or be skipped if there is no current PR.
       - run: echo "Your PR is ${TF_VAR_PR}"
-        if: success() && steps.findPr.outputs.number
+        if: success() && jobs.steps.findPr.outputs.number
         env:
           TF_VAR_PR: ${{ steps.findPr.outputs.pr }}
 
