@@ -35,7 +35,7 @@ jobs:
       - name: Terraform Plan
         id: plan
         if: success() && steps.findPr.outputs.number
-        run: terraform
+        run: terraform plan
         env:
           TF_VAR_PR: ${{ steps.findPr.outputs.pr }}
 
