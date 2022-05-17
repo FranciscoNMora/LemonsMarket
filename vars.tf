@@ -37,7 +37,7 @@ variable "HASH" {
   type = string
 }
 
-variable "GITHUB_REF" {
-  type = string
-}
+#variable "BRANCH_NAME" {
+#  type = string
+#}
 

@@ -5,7 +5,6 @@ provider "aws" {
 
 # Creating EC2 Instance
 resource "aws_instance" "demoinstance" {
-
   # AMI based on region
   ami = "${lookup(var.ami, var.aws_region)}"
 
