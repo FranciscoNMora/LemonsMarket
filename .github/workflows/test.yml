@@ -21,15 +21,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Find the PR associated with this push, if there is one.
+
       - uses: jwalton/gh-find-current-pr@v1
         id: findPr
 
-      # This will echo "Your PR is 7", or be skipped if there is no current PR.
-      - run: echo "Your PR is ${TF_VAR_PR}"
+      - run: echo "TF_VAR_PR=${{ steps.branch-name.outputs.base_ref_branch }} >> $GITHUB_ENV"
         if: success() && steps.findPr.outputs.number
-        env:
-          TF_VAR_PR: ${{ steps.findPr.outputs.pr }}
 
       - name: Test PR env
         run: echo "Test -> PR is ${TF_VAR_PR}"
