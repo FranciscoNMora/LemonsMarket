@@ -6,13 +6,12 @@ on:
       - '*/*'       # matches every branch containing a single '/'
       - '**'        # matches every branch
       - '!master'
-  pull_request:
-    branches: [ master ]
+#  pull_request:
+#    branches: [ master ]
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
   TF_VAR_AWS_EC2_PEM: ${{ secrets.aws_ec2_pem }}
-  #TF_VAR_BRANCH_NAME: ${{ github.ref }}
   TF_VAR_HASH: ${{ github.sha }}
 jobs:
   build:
@@ -31,6 +30,9 @@ jobs:
         if: success() && steps.findPr.outputs.number
         env:
           TF_VAR_PR: ${{ steps.findPr.outputs.pr }}
+
+      - name: Test PR env
+        run: echo "Test -> PR is ${TF_VAR_PR}"
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1

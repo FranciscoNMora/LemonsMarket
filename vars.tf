@@ -38,6 +38,6 @@ variable "HASH" {
 }
 
 variable "PR" {
-  type = string
+  default = 1
 }
 
