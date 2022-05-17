@@ -31,7 +31,7 @@ jobs:
       - run: echo "Your PR is ${TF_VAR_PR}"
         if: success() && jobs.steps.findPr.outputs.number
         env:
-          TF_VAR_PR: ${{ steps.findPr.outputs.pr }}
+          TF_VAR_PR: ${{ jobs.steps.findPr.outputs.pr }}
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
