@@ -25,7 +25,7 @@ resource "aws_instance" "demoinstance" {
 
   # Attaching Tag to Instance
   tags = {
-    Name = "${var.PR}"
+    Name = "Example-${var.PR}"
   }
 
   # Root Block Storage
